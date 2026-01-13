@@ -1,25 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haroon Arif — Data Analyst & AI Engineer</title>
+  <meta name="description" content="Haroon Arif — Google-Certified Data Analyst & AI Engineer. Python, Data Science, Machine Learning, AI solutions." />
+  <meta property="og:title" content="Haroon Arif — Portfolio" />
+  <meta property="og:description" content="Google-Certified Data Analyst & AI Engineer. Python, Data Science, ML." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to My Website!</h1>
-  <p>This website is deployed via GitHub Pages.</p>
+  <header class="nav">
+    <a class="brand" href="#">
+      <img src="images/logo.png" alt="Haroon Intelligence Labs Logo" class="logo" />
+      <span>Haroon Arif</span>
+    </a>
+    <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Data Analyst & AI Engineer</h1>
+      <p>
+        I am a Google-Certified Data Analyst and AI Engineer with strong experience in Python, Data Science, and Machine Learning, backed by an IBM certification in Machine Learning with Python. I help businesses transform raw data into actionable insights, intelligent models, and practical solutions.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Contact</a>
+        <a class="btn" href="assets/Haroon_Arif_CV.pdf" target="_blank">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/profile.jpg" alt="Haroon Arif Profile" />
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About</h2>
+    <p>
+      I don’t just write code — I solve problems. Whether you need data insights, AI automation, predictive models, or Python-based solutions, I focus on accuracy, performance, and business value.
+    </p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills & Expertise</h2>
+    <ul class="chips">
+      <li>Python Programming & Automation</li>
+      <li>Data Analysis & Visualization (Google-standard analytics)</li>
+      <li>Machine Learning Models (IBM-certified ML workflows)</li>
+      <li>AI-Driven Solutions (Predictive & decision-making systems)</li>
+      <li>Data Cleaning, Automation & Reporting</li>
+    </ul>
+  </section>
+
+  <section id="certs" class="section">
+    <h2>Certifications</h2>
+    <div class="grid">
+      <figure>
+        <img src="certifications/google-data-foundation.png" alt="Google Foundations: Data, Data, Everywhere" />
+        <figcaption>Google — Foundations: Data, Data, Everywhere</figcaption>
+      </figure>
+      <figure>
+        <img src="certifications/ibm-ml-python.png" alt="IBM Machine Learning with Python" />
+        <figcaption>IBM — Machine Learning with Python</figcaption>
+      </figure>
+      <figure>
+        <img src="certifications/hp-ai-beginners.png" alt="HP LIFE AI for Beginners" />
+        <figcaption>HP LIFE — AI for Beginners</figcaption>
+      </figure>
+      <figure>
+        <img src="certifications/hp-data-science.png" alt="HP LIFE Data Science & Analytics" />
+        <figcaption>HP LIFE — Data Science & Analytics</figcaption>
+      </figure>
+      <figure>
+        <img src="certifications/kodekloud-python.png" alt="KodeKloud PCAP Python" />
+        <figcaption>KodeKloud — PCAP Python</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p>Projects coming soon. Neeche placeholders ready hain:</p>
+    <div class="cards">
+      <a class="card" href="projects/project-1.html">
+        <h3>Project 1</h3>
+        <p>Short summary — add later.</p>
+      </a>
+      <a class="card" href="projects/project-2.html">
+        <h3>Project 2</h3>
+        <p>Short summary — add later.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="blog" class="section">
+    <h2>Blog</h2>
+    <p>Blog posts coming soon. Placeholder pages ready:</p>
+    <div class="cards">
+      <a class="card" href="blog/post-1.html">
+        <h3>Post 1</h3>
+        <p>Intro paragraph — add later.</p>
+      </a>
+      <a class="card" href="blog/post-2.html">
+        <h3>Post 2</h3>
+        <p>Intro paragraph — add later.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p><strong>Email:</strong> <a href="mailto:hafizharoonarif@gmail.com">hafizharoonarif@gmail.com</a></p>
+      <p><strong>Phone:</strong> +92 316 7697146</p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/HaroonArif7" target="_blank">HaroonArif7</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank">haroon-arif-09832924a</a></p>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+    <p class="note">Formspree ID baad me share kar dein, main wire kar dunga.</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Haroon Arif. All rights reserved.</p>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-root/
- ├─ index.html         ← Home page (bio, skills, certifications, contact)
- ├─ style.css          ← Theme: modern + gradient + sans-serif
- ├─ script.js          ← Animations + mobile nav
- ├─ images/
- │    ├─ profile.jpg
- │    └─ logo.png
- ├─ certifications/
- │    ├─ google-data-foundation.png
- │    ├─ ibm-ml-python.png
- │    ├─ hp-ai-beginners.png
- │    ├─ hp-data-science.png
- │    └─ kodekloud-python.png
- ├─ projects/          ← Placeholder folder (empty for now)
- ├─ README.md          ← GitHub Pages upload guide
+
