@@ -390,7 +390,14 @@ button:focus-visible {
   font-size: 56px;
   font-weight: 700;
   color: var(--teal);
+  object-fit: cover;
+  object-position: center top;
   border: 3px solid #fff;
+  box-shadow: 0 2px 20px rgba(14,124,123,.15);
+  display: block;
+}
+.about-text p { color: var(--ink-mid); margin-bottom: 14px; }
+.about-text p strong { color: var(--ink); }
   box-shadow: 0 2px 20px rgba(14,124,123,.15);
 }
 
