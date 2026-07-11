@@ -1,685 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Haroon Arif — Google Certified Data Analyst, Python Programmer, Data Scientist & AI Engineer. Transforming raw data into intelligent, actionable solutions." />
-  <title>Haroon Arif · Data Scientist & AI Engineer</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haroon Arif — Data Analyst & AI Engineer</title>
+<meta name="description" content="Haroon Arif — Google-Certified Data Analyst & AI Engineer. Python, Machine Learning, Data Science, AI-driven solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to main content</a>
+<div class="scan-progress" id="scanProgress"></div>
 
-<!-- ─── Nav ─── -->
-<nav id="main-nav" aria-label="Main navigation">
-  <div class="container">
-    <a href="#hero" class="nav-logo">HAROON<span>·</span>ARIF</a>
-
-    <button class="nav-toggle" id="nav-toggle"
-      aria-expanded="false" aria-controls="nav-list" aria-label="Toggle menu">
-      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <line x1="3" y1="6"  x2="19" y2="6"/>
-        <line x1="3" y1="11" x2="19" y2="11"/>
-        <line x1="3" y1="16" x2="19" y2="16"/>
-      </svg>
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">HAROON<span>.ARIF</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-brown nav-cta">Get in Touch</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </button>
-
-    <ul class="nav-links" id="nav-list" role="list">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-    </ul>
   </div>
-</nav>
+</header>
 
-<main id="main">
-
-<!-- ═══════════════════════════════════════════ HERO ═══ -->
-<section id="hero" aria-labelledby="hero-heading">
-  <div class="container">
-
-    <!-- Copy -->
-    <div class="hero-copy">
-      <p class="hero-kicker">Available for freelance &amp; projects</p>
-
-      <h1 class="hero-name" id="hero-heading">
-        Haroon<br><em>Arif</em>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid noise"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow reveal">// PORTFOLIO — 2026</p>
+      <h1 class="hero-title">
+        <span class="reveal-line"><span class="reveal-word">HAROON</span></span>
+        <span class="reveal-line"><span class="reveal-word text-outline">ARIF</span></span>
       </h1>
-
-      <!-- Headline strip -->
-      <div class="hero-headline" role="doc-subtitle">
-        <span class="hl-item">Google Certified Data Analyst</span>
-        <span class="hl-sep">|</span>
-        <span class="hl-item">Python Programmer</span>
-        <span class="hl-sep">|</span>
-        <span class="hl-item">Data Scientist</span>
-        <span class="hl-sep">|</span>
-        <span class="hl-item">AI Engineer</span>
-      </div>
-
-      <p class="hero-tagline">
-        I help businesses transform raw data into actionable insights,
-        intelligent models, and practical solutions — with accuracy,
-        performance, and real business value.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l4 4 4-4M7 3v10"/></svg>
-          View My Work
-        </a>
-        <a href="#contact" class="btn btn-outline">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12L12 2M12 2H7M12 2v5"/></svg>
-          Hire Me
-        </a>
-      </div>
-
-      <!-- Quick-contact strip -->
-      <div class="hero-interact" aria-label="Quick contact links">
-        <a href="mailto:hafizharoonarif@gmail.com">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="16" height="12" rx="2"/><path d="M2 7l7 5 7-5"/></svg>
-          hafizharoonarif@gmail.com
-        </a>
-        <span aria-hidden="true" style="color:var(--border)">·</span>
-        <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener noreferrer">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452H17.02v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.607V9h3.289v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.914 1.914 0 110-3.827 1.914 1.914 0 010 3.827zm1.648 13.019H3.69V9h3.295v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
-        <span aria-hidden="true" style="color:var(--border)">·</span>
-        <a href="https://github.com/haroonarif" target="_blank" rel="noopener noreferrer">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-
-    <!-- Animated chart -->
-    <div class="hero-chart" aria-hidden="true">
-      <p class="chart-meta">accuracy_score <strong>↑ 94.7%</strong> · epoch 48 / 50</p>
-      <svg id="hero-svg" viewBox="0 0 380 200" fill="none">
-        <!-- Grid lines -->
-        <line x1="0" y1="160" x2="380" y2="160" stroke="#e8eeee" stroke-width="1"/>
-        <line x1="0" y1="120" x2="380" y2="120" stroke="#e8eeee" stroke-width="1"/>
-        <line x1="0" y1="80"  x2="380" y2="80"  stroke="#e8eeee" stroke-width="1"/>
-        <line x1="0" y1="40"  x2="380" y2="40"  stroke="#e8eeee" stroke-width="1"/>
-        <!-- Y axis labels -->
-        <text x="4" y="163" font-family="JetBrains Mono,monospace" font-size="9" fill="#bbb">0.75</text>
-        <text x="4" y="123" font-family="JetBrains Mono,monospace" font-size="9" fill="#bbb">0.85</text>
-        <text x="4" y="83"  font-family="JetBrains Mono,monospace" font-size="9" fill="#bbb">0.92</text>
-        <text x="4" y="43"  font-family="JetBrains Mono,monospace" font-size="9" fill="#bbb">0.97</text>
-        <!-- Area -->
-        <path id="hero-area"
-          d="M38 158 C68 155 88 148 108 140 C128 132 148 118 168 105 C188 92 208 78 228 64 C248 52 268 42 288 36 C308 30 328 28 348 26 L348 175 L38 175 Z"
-          fill="url(#hero-grad)" opacity="0"/>
-        <!-- Trend line -->
-        <path id="hero-line"
-          d="M38 158 C68 155 88 148 108 140 C128 132 148 118 168 105 C188 92 208 78 228 64 C248 52 268 42 288 36 C308 30 328 28 348 26"
-          stroke="url(#hero-stroke)" stroke-width="2.5" stroke-linecap="round"
-          fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
-        <!-- Dots -->
-        <g id="hero-dots" opacity="0">
-          <circle cx="38"  cy="158" r="3.5" fill="#0E7C7B"/>
-          <circle cx="78"  cy="152" r="3.5" fill="#0E7C7B"/>
-          <circle cx="118" cy="138" r="3.5" fill="#0E7C7B"/>
-          <circle cx="158" cy="109" r="3.5" fill="#D98E04"/>
-          <circle cx="198" cy="84"  r="3.5" fill="#0E7C7B"/>
-          <circle cx="238" cy="62"  r="3.5" fill="#0E7C7B"/>
-          <circle cx="278" cy="40"  r="3.5" fill="#D98E04"/>
-          <circle cx="318" cy="30"  r="3.5" fill="#0E7C7B"/>
-          <circle cx="348" cy="26"  r="4.5" fill="#D98E04" stroke="#fff" stroke-width="1.5"/>
-        </g>
-        <!-- Tip label -->
-        <g id="hero-tip" opacity="0">
-          <rect x="298" y="8" width="58" height="18" rx="3" fill="#D98E04"/>
-          <text x="327" y="20" font-family="JetBrains Mono,monospace" font-size="9" fill="#fff" text-anchor="middle" font-weight="600">94.7%</text>
-        </g>
-        <defs>
-          <linearGradient id="hero-stroke" x1="0" y1="0" x2="380" y2="0" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#0E7C7B"/>
-            <stop offset="100%" stop-color="#D98E04"/>
-          </linearGradient>
-          <linearGradient id="hero-grad" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stop-color="#0E7C7B" stop-opacity=".14"/>
-            <stop offset="100%" stop-color="#0E7C7B" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div class="chart-foot">
-        <span>epoch 1</span>
-        <span>epoch 50</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════ ABOUT ═══ -->
-<section id="about" class="section" aria-labelledby="about-heading">
-  <div class="container">
-    <p class="section-label">01 &nbsp;About</p>
-    <h2 class="section-title" id="about-heading">The person<br>behind the <em>data</em></h2>
-div class="about-grid reveal">
-      <div class="avatar-wrap">
-        <div class="avatar-ring" aria-hidden="true"></div>
-        <div class="avatar-img" aria-label="Haroon Arif — initials avatar">HA</div>
-        <img class="avatar-img" src="../attached_assets/linkedin_profile_pic_1783589357099.jpeg" alt="Haroon Arif — profile photo">
-      </div>
-      <div class="about-text">
-        <p>
-          I'm <strong>Haroon Arif</strong> — a Google-Certified Data Analyst and AI Engineer with
-          strong experience in Python, Data Science, and Machine Learning, backed by an IBM
-          certification in Machine Learning with Python.
-        </p>
-        <p>
-          I help businesses transform raw data into actionable insights, intelligent models,
-          and practical solutions. I don't just write code — <strong>I solve problems</strong>.
-          Whether you need data insights, AI automation, predictive models, or Python-based
-          solutions, I focus on accuracy, performance, and business value.
-        </p>
-
-        <ul class="specs-list" aria-label="Core specialisations">
-          <li><strong>Python Programming &amp; Automation</strong></li>
-          <li><strong>Data Analysis &amp; Visualization</strong> — Google-standard analytics</li>
-          <li><strong>Machine Learning Models</strong> — IBM-certified ML workflows</li>
-          <li><strong>AI-Driven Solutions</strong> — Predictive &amp; decision-making systems</li>
-          <li><strong>Data Cleaning, Automation &amp; Reporting</strong></li>
-        </ul>
-
-        <p class="about-closer">
-          Whether it's a quick automation script or a full-scale ML pipeline, I focus on
-          solutions that are accurate, efficient, and built for real-world impact.
-        </p>
-      </div>
-    </div>
-
-    <!-- Stats -->
-    <div class="stats-row reveal">
-      <div class="stat">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Years Exp.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">40+</div>
-        <div class="stat-label">Projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Certifications</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">15+</div>
-        <div class="stat-label">Tools</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════ SKILLS ═══ -->
-<section id="skills" class="section" aria-labelledby="skills-heading">
-  <div class="container">
-    <p class="section-label">02 &nbsp;Skills</p>
-    <h2 class="section-title" id="skills-heading">Technical<br><em>Proficiency</em></h2>
-    <p class="section-sub">Tools and disciplines I work with every day — rated honestly.</p>
-
-    <div class="skills-grid reveal" role="list">
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Python Programming</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Python Programming 95%">
-          <div class="skill-bar" data-width="95"></div>
-        </div>
-        <span class="skill-pct">95%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Data Science</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Data Science 90%">
-          <div class="skill-bar" data-width="90"></div>
-        </div>
-        <span class="skill-pct">90%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Machine Learning</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Machine Learning 88%">
-          <div class="skill-bar" data-width="88"></div>
-        </div>
-        <span class="skill-pct">88%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">AI Engineering</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="AI Engineering 85%">
-          <div class="skill-bar" data-width="85"></div>
-        </div>
-        <span class="skill-pct">85%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Prompt Engineering</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Prompt Engineering 92%">
-          <div class="skill-bar" data-width="92"></div>
-        </div>
-        <span class="skill-pct">92%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Data Analysis</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="Data Analysis 92%">
-          <div class="skill-bar" data-width="92"></div>
-        </div>
-        <span class="skill-pct">92%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">Data Visualization</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" aria-label="Data Visualization 87%">
-          <div class="skill-bar" data-width="87"></div>
-        </div>
-        <span class="skill-pct">87%</span>
-      </div>
-
-      <div class="skill-row" role="listitem">
-        <span class="skill-name">SQL &amp; Databases</span>
-        <div class="skill-bar-wrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="SQL and Databases 80%">
-          <div class="skill-bar" data-width="80"></div>
-        </div>
-        <span class="skill-pct">80%</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════ CERTIFICATES ═══ -->
-<section id="certificates" class="section" aria-labelledby="certs-heading">
-  <div class="container">
-    <p class="section-label">03 &nbsp;Certificates</p>
-    <h2 class="section-title" id="certs-heading">Verified<br><em>Credentials</em></h2>
-    <p class="section-sub">Click any certificate to view it full-size.</p>
-
-    <div class="certs-grid reveal">
-
-      <!-- 1. Google / Coursera -->
-      <article class="cert-card">
-        <div class="cert-thumb" role="button" tabindex="0"
-          aria-label="View Google certificate full size"
-          data-full="../attached_assets/google_certified_1783587944620.png">
-          <img src="../attached_assets/google_certified_1783587944620.png"
-               alt="Google Course Certificate — Foundations: Data, Data, Everywhere — Haroon Arif — Dec 29, 2025" />
-          <div class="cert-thumb-overlay" aria-hidden="true">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="5"/><line x1="16" y1="16" x2="13" y2="13"/><line x1="9" y1="11" x2="13" y2="11"/><line x1="11" y1="9" x2="11" y2="13"/></svg>
-            Click to enlarge
-          </div>
-        </div>
-        <div class="cert-body">
-          <p class="cert-issuer">Google · Coursera</p>
-          <h3 class="cert-title">Foundations: Data, Data, Everywhere</h3>
-          <p class="cert-date">Issued Dec 29, 2025</p>
-          <div class="cert-actions">
-            <a href="https://coursera.org/verify/3YB9ZFQW89QO"
-               class="cert-link" target="_blank" rel="noopener noreferrer">
-              Verify
-              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2H1.5A.5.5 0 001 2.5v6a.5.5 0 00.5.5h6a.5.5 0 00.5-.5V7"/><path d="M5 1h4v4M9 1L5 5"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2. IBM / Coursera -->
-      <article class="cert-card">
-        <div class="cert-thumb" role="button" tabindex="0"
-          aria-label="View IBM certificate full size"
-          data-full="../attached_assets/machine_wwith_python_1783587960124.png">
-          <img src="../attached_assets/machine_wwith_python_1783587960124.png"
-               alt="IBM Course Certificate — Machine Learning with Python — Haroon Arif — Dec 30, 2025" />
-          <div class="cert-thumb-overlay" aria-hidden="true">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="5"/><line x1="16" y1="16" x2="13" y2="13"/><line x1="9" y1="11" x2="13" y2="11"/><line x1="11" y1="9" x2="11" y2="13"/></svg>
-            Click to enlarge
-          </div>
-        </div>
-        <div class="cert-body">
-          <p class="cert-issuer">IBM · Coursera</p>
-          <h3 class="cert-title">Machine Learning with Python</h3>
-          <p class="cert-date">Issued Dec 30, 2025</p>
-          <div class="cert-actions">
-            <a href="https://coursera.org/verify/PMHTZIOVFU4E"
-               class="cert-link" target="_blank" rel="noopener noreferrer">
-              Verify
-              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2H1.5A.5.5 0 001 2.5v6a.5.5 0 00.5.5h6a.5.5 0 00.5-.5V7"/><path d="M5 1h4v4M9 1L5 5"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. HP LIFE — Data Science & Analytics -->
-      <article class="cert-card">
-        <div class="cert-thumb" role="button" tabindex="0"
-          aria-label="View HP LIFE Data Science certificate full size"
-          data-full="../attached_assets/hp_1783587951630.png">
-          <img src="../attached_assets/hp_1783587951630.png"
-               alt="HP LIFE Certificate of Completion — Data Science &amp; Analytics — Haroon Arif — Dec 24, 2025" />
-          <div class="cert-thumb-overlay" aria-hidden="true">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="5"/><line x1="16" y1="16" x2="13" y2="13"/><line x1="9" y1="11" x2="13" y2="11"/><line x1="11" y1="9" x2="11" y2="13"/></svg>
-            Click to enlarge
-          </div>
-        </div>
-        <div class="cert-body">
-          <p class="cert-issuer">HP LIFE · HP Foundation</p>
-          <h3 class="cert-title">Data Science &amp; Analytics</h3>
-          <p class="cert-date">Presented Dec 24, 2025</p>
-          <div class="cert-actions">
-            <a href="../attached_assets/Data_Science_&_Analytics_1783587915951.pdf"
-               class="cert-link" target="_blank" rel="noopener noreferrer" download>
-              Download PDF
-              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 1v6M2 5l3 3 3-3"/><line x1="1" y1="9" x2="9" y2="9"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4. HP LIFE — AI for Beginners -->
-      <article class="cert-card">
-        <div class="cert-thumb" role="button" tabindex="0"
-          aria-label="View HP LIFE AI for Beginners certificate full size"
-          data-full="../attached_assets/AI_cer_1783587936375.png">
-          <img src="../attached_assets/AI_cer_1783587936375.png"
-               alt="HP LIFE Certificate of Completion — AI for Beginners — Haroon Arif — Dec 28, 2025" />
-          <div class="cert-thumb-overlay" aria-hidden="true">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="5"/><line x1="16" y1="16" x2="13" y2="13"/><line x1="9" y1="11" x2="13" y2="11"/><line x1="11" y1="9" x2="11" y2="13"/></svg>
-            Click to enlarge
-          </div>
-        </div>
-        <div class="cert-body">
-          <p class="cert-issuer">HP LIFE · HP Foundation</p>
-          <h3 class="cert-title">AI for Beginners</h3>
-          <p class="cert-date">Presented Dec 28, 2025</p>
-          <div class="cert-actions">
-            <a href="../attached_assets/AI_for_Beginners_1783587926787.pdf"
-               class="cert-link" target="_blank" rel="noopener noreferrer" download>
-              Download PDF
-              <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 1v6M2 5l3 3 3-3"/><line x1="1" y1="9" x2="9" y2="9"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5. KodeKloud — PCAP -->
-      <article class="cert-card">
-        <div class="cert-thumb" role="button" tabindex="0"
-          aria-label="View KodeKloud PCAP certificate full size"
-          data-full="../attached_assets/pcap_1783587969281.png">
-          <img src="../attached_assets/pcap_1783587969281.png"
-               alt="KodeKloud Course Completion Certificate — PCAP Python Certification Course — Sep 18, 2024" />
-          <div class="cert-thumb-overlay" aria-hidden="true">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="5"/><line x1="16" y1="16" x2="13" y2="13"/><line x1="9" y1="11" x2="13" y2="11"/><line x1="11" y1="9" x2="11" y2="13"/></svg>
-            Click to enlarge
-          </div>
-        </div>
-        <div class="cert-body">
-          <p class="cert-issuer">KodeKloud</p>
-          <h3 class="cert-title">PCAP — Python Certification Course</h3>
-          <p class="cert-date">Issued Sep 18, 2024 &nbsp;·&nbsp; ID: 21421a1c-bd70</p>
-          <div class="cert-actions">
-            <!-- No verify URL provided; shown as issued -->
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview" aria-hidden="true">
-  <button id="lightbox-close" aria-label="Close certificate preview">&#x2715;</button>
-  <img id="lightbox-img" src="" alt="Certificate full size" />
-</div>
-
-<div class="divider"></div>
-
-<!-- ═══════════════════════════════════════════ PROJECTS ═══ -->
-<section id="projects" class="section" aria-labelledby="projects-heading">
-  <div class="container">
-    <p class="section-label">04 &nbsp;Projects</p>
-    <h2 class="section-title" id="projects-heading">Selected<br><em>Case Studies</em></h2>
-    <p class="section-sub">End-to-end projects — from raw data to deployed, measurable results.</p>
-
-    <div class="projects-list">
-
-      <!-- Project 1 -->
-      <article class="project-card reveal">
-        <div>
-          <p class="project-num">PROJECT_01</p>
-          <h3 class="project-title">Customer Churn Prediction Engine</h3>
-          <div class="project-tags" aria-label="Tags">
-            <span class="tag">Python</span>
-            <span class="tag">XGBoost</span>
-            <span class="tag">SHAP</span>
-            <span class="tag amber">ML Pipeline</span>
-            <span class="tag">FastAPI</span>
-          </div>
-          <p class="project-desc">
-            Built a real-time churn prediction system processing 2 M+ user events per day. Achieved
-            91% AUC with SHAP-based feature explanations surfaced directly to the client's dashboard.
-            Reduced voluntary churn by 18% within the first quarter post-deployment.
-          </p>
-          <div class="project-links">
-            <a href="#contact" class="project-link">
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h10v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z"/><path d="M5 3V1M9 3V1"/></svg>
-              Request Case Study
-            </a>
-            <a href="https://github.com/haroonarif" class="project-link" target="_blank" rel="noopener noreferrer">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <span class="project-badge">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 12 7 7 10 10 14 4"/></svg>
-          AUC 0.91
+      <p class="hero-role reveal-line"><span class="reveal-word">Google‑Certified Data Analyst <br class="mobile-break">&amp; AI Engineer</span></p>
+      <p class="hero-desc reveal-line"><span class="reveal-word">I turn raw data into decisions — building Python-driven analytics, machine learning models, and AI-powered systems that solve real business problems.</span></p>
+      <div class="hero-actions reveal-line">
+        <span class="reveal-word-block">
+          <a href="#certifications" class="btn btn-brown">View Certifications</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </span>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project-card reveal">
-        <div>
-          <p class="project-num">PROJECT_02</p>
-          <h3 class="project-title">AI-Powered Python Automation Suite</h3>
-          <div class="project-tags" aria-label="Tags">
-            <span class="tag">Python</span>
-            <span class="tag">AI APIs</span>
-            <span class="tag">Automation</span>
-            <span class="tag amber">Prompt Eng.</span>
-            <span class="tag">Pandas</span>
-          </div>
-          <p class="project-desc">
-            Developed a modular automation suite using Python and LLM APIs to automate data
-            extraction, cleaning, and report generation workflows. Cut manual processing time by
-            70% for a business intelligence team, with prompt-engineered pipelines driving
-            consistent, structured outputs.
-          </p>
-          <div class="project-links">
-            <a href="#contact" class="project-link">
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h10v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z"/><path d="M5 3V1M9 3V1"/></svg>
-              Request Case Study
-            </a>
-            <a href="https://github.com/haroonarif" class="project-link" target="_blank" rel="noopener noreferrer">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <span class="project-badge">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 13 9 4 9"/><polyline points="4 6 7 9 4 12"/></svg>
-          70% faster
+      </div>
+      <div class="hero-social reveal-line">
+        <span class="reveal-word-block">
+          <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener">GitHub ↗</a>
         </span>
-      </article>
+      </div>
+    </div>
 
-      <!-- Project 3 -->
-      <article class="project-card reveal">
-        <div>
-          <p class="project-num">PROJECT_03</p>
-          <h3 class="project-title">Retail Sales Analytics Dashboard</h3>
-          <div class="project-tags" aria-label="Tags">
-            <span class="tag">Python</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag amber">Data Analysis</span>
-            <span class="tag">Plotly</span>
-          </div>
-          <p class="project-desc">
-            End-to-end data analytics project following Google Data Analytics standards — from
-            data cleaning and SQL querying to interactive Plotly dashboards. Delivered actionable
-            KPI insights across 12 store locations, enabling data-driven inventory and staffing
-            decisions that improved margins by 15%.
-          </p>
-          <div class="project-links">
-            <a href="#contact" class="project-link">
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h10v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z"/><path d="M5 3V1M9 3V1"/></svg>
-              Request Case Study
-            </a>
-            <a href="https://github.com/haroonarif" class="project-link" target="_blank" rel="noopener noreferrer">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <span class="project-badge">
-          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="2 12 7 7 10 10 14 4"/></svg>
-          +15% margin
-        </span>
-      </article>
-
+    <div class="hero-photo-wrap reveal">
+      <div class="frame">
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+        <div class="scan-line"></div>
+        <img src="images/profile.jpg" alt="Haroon Arif" class="hero-photo">
+        <div class="tag tag-top">PERSON <span>99.8%</span></div>
+        <div class="tag tag-bottom">DATA_ANALYST // AI_ENGINEER</div>
+      </div>
+      <div class="stat-chip chip-1">
+        <span class="chip-num">05</span>
+        <span class="chip-label">Certifications</span>
+      </div>
+      <div class="stat-chip chip-2">
+        <span class="chip-num">01</span>
+        <span class="chip-label">Focus: Data → Decisions</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-marquee">
+    <div class="marquee-track">
+      <span>PYTHON</span><span>•</span><span>MACHINE LEARNING</span><span>•</span><span>DATA ANALYSIS</span><span>•</span><span>AI SOLUTIONS</span><span>•</span><span>AUTOMATION</span><span>•</span>
+      <span>PYTHON</span><span>•</span><span>MACHINE LEARNING</span><span>•</span><span>DATA ANALYSIS</span><span>•</span><span>AI SOLUTIONS</span><span>•</span><span>AUTOMATION</span><span>•</span>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="about-copy">
+      <p class="eyebrow reveal">// ABOUT</p>
+      <h2 class="section-title reveal">Not just code.<br>Solutions with value.</h2>
+      <p class="about-text reveal">I am a Google‑Certified Data Analyst and AI Engineer with strong experience in Python, Data Science, and Machine Learning, backed by an IBM certification in Machine Learning with Python. I help businesses transform raw data into actionable insights, intelligent models, and practical solutions.</p>
+      <p class="about-text reveal">I don't just write code — I solve problems. Whether you need data insights, AI automation, predictive models, or Python-based solutions, I focus on accuracy, performance, and business value.</p>
+      <div class="about-links reveal">
+        <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener" class="btn btn-outline-navy">LinkedIn ↗</a>
+        <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" class="btn btn-outline-navy">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="about-panel reveal">
+      <div class="panel-row">
+        <span class="panel-label">ROLE</span>
+        <span class="panel-value">Data Analyst / AI Engineer</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-label">CORE_STACK</span>
+        <span class="panel-value">Python · SQL · ML</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-label">CERTIFIED_BY</span>
+        <span class="panel-value">Google · IBM · HP LIFE</span>
+      </div>
+      <div class="panel-row">
+        <span class="panel-label">FOCUS</span>
+        <span class="panel-value">Accuracy · Performance · Value</span>
+      </div>
+      <div class="panel-row panel-row-last">
+        <span class="panel-label">STATUS</span>
+        <span class="panel-value status-live"><i></i> Available for work</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ═══════════════════════════════════════════ CONTACT ═══ -->
-<section id="contact" class="section" aria-labelledby="contact-heading">
-  <div class="container">
-    <p class="section-label">05 &nbsp;Contact</p>
-    <h2 class="section-title" id="contact-heading">Let's <em>work</em><br>together</h2>
-
-    <div class="contact-grid reveal">
-
-      <!-- Left: links -->
-      <div class="contact-info">
-        <h3>Get in touch</h3>
-        <p>
-          Whether it's a data project, an automation script, an AI solution, or just a chat —
-          my inbox is open. Let's build something great.
-        </p>
-
-        <div class="contact-links">
-          <a href="mailto:hafizharoonarif@gmail.com" class="contact-link-item">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l8 5 8-5"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-sub">hafizharoonarif@gmail.com</div>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/haroon-arif-09832924a/"
-             class="contact-link-item" target="_blank" rel="noopener noreferrer">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H17.02v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.607V9h3.289v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.914 1.914 0 110-3.827 1.914 1.914 0 010 3.827zm1.648 13.019H3.69V9h3.295v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-label">LinkedIn</div>
-              <div class="contact-link-sub">linkedin.com/in/haroon-arif-09832924a</div>
-            </div>
-          </a>
-
-          <a href="https://github.com/haroonarif"
-             class="contact-link-item" target="_blank" rel="noopener noreferrer">
-            <div class="contact-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-            </div>
-            <div>
-              <div class="contact-link-label">GitHub</div>
-              <div class="contact-link-sub">github.com/haroonarif</div>
-            </div>
-          </a>
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <p class="eyebrow reveal">// CAPABILITIES</p>
+    <h2 class="section-title reveal">What I bring to the table.</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M24 4c-6 0-9 3-9 8v4h9v2H9c-4 0-6 3-6 8s2 8 6 8h3v-5c0-4 3-7 7-7h9c3 0 6-3 6-6v-5c0-6-4-7-10-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M24 44c6 0 9-3 9-8v-4h-9v-2h15c4 0 6-3 6-8s-2-8-6-8h-3v5c0 4-3 7-7 7h-9c-3 0-6 3-6 6v5c0 6 4 7 10 7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="18.5" cy="10.5" r="1.3" fill="currentColor"/><circle cx="29.5" cy="37.5" r="1.3" fill="currentColor"/></svg>
         </div>
+        <h3>Python Programming &amp; Automation</h3>
+        <p>Clean, reliable scripts and pipelines that remove manual, repetitive work.</p>
+      </div>
 
-        <!-- Interaction buttons -->
-        <div class="contact-interact">
-          <a href="mailto:hafizharoonarif@gmail.com?subject=Project%20Enquiry" class="btn btn-primary">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="2" width="14" height="12" rx="2"/><path d="M1 6l7 5 7-5"/></svg>
-            Email Me Directly
-          </a>
-          <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452H17.02v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.607V9h3.289v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a1.914 1.914 0 110-3.827 1.914 1.914 0 010 3.827zm1.648 13.019H3.69V9h3.295v11.452z"/></svg>
-            Connect on LinkedIn
-          </a>
+      <div class="skill-card reveal">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M6 40V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 40h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="12" y="26" width="5" height="14" fill="currentColor"/><rect x="21" y="18" width="5" height="22" fill="currentColor"/><rect x="30" y="11" width="5" height="29" fill="currentColor"/></svg>
+        </div>
+        <h3>Data Analysis &amp; Visualization</h3>
+        <p>Google-standard analytics that turn spreadsheets into clear, visual decisions.</p>
+      </div>
+
+      <div class="skill-card reveal">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" stroke-dasharray="3 4"/><circle cx="24" cy="8" r="2" fill="currentColor"/><circle cx="40" cy="24" r="2" fill="currentColor"/><circle cx="24" cy="40" r="2" fill="currentColor"/><circle cx="8" cy="24" r="2" fill="currentColor"/></svg>
+        </div>
+        <h3>Machine Learning Models</h3>
+        <p>IBM-certified ML workflows — from data prep to trained, evaluated models.</p>
+      </div>
+
+      <div class="skill-card reveal">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="10" width="28" height="28" rx="3" stroke="currentColor" stroke-width="2"/><path d="M18 20l4 4-4 4M26 28h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>AI‑Driven Solutions</h3>
+        <p>Predictive and decision-making systems built for real business scenarios.</p>
+      </div>
+
+      <div class="skill-card reveal">
+        <span class="corner tl"></span><span class="corner br"></span>
+        <div class="skill-icon">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 12h32M8 24h32M8 36h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M34 32l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Data Cleaning, Automation &amp; Reporting</h3>
+        <p>Turning messy raw data into structured, trustworthy, ready-to-use reports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs" id="certifications">
+  <div class="section-inner">
+    <p class="eyebrow reveal">// VERIFIED CREDENTIALS</p>
+    <h2 class="section-title light reveal">Certifications on record.</h2>
+
+    <div class="certs-grid">
+      <div class="cert-card reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="cert-img-wrap">
+          <img src="images/cert-google.png" alt="Google — Foundations: Data, Data, Everywhere certificate">
+          <span class="verify-badge">VERIFIED</span>
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">GOOGLE · COURSERA</span>
+          <h3>Foundations: Data, Data, Everywhere</h3>
+          <span class="cert-date">Dec 29, 2025</span>
+          <a href="https://coursera.org/verify/3YB9ZFQW89QO" target="_blank" rel="noopener" class="cert-verify">Verify credential ↗</a>
         </div>
       </div>
 
-      <!-- Right: form -->
-      <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
-        <div class="form-group">
-          <label class="form-label" for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" class="form-input"
-            placeholder="Your full name" required autocomplete="name" />
+      <div class="cert-card reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="cert-img-wrap">
+          <img src="images/cert-ibm.png" alt="IBM — Machine Learning with Python certificate">
+          <span class="verify-badge">VERIFIED</span>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" class="form-input"
-            placeholder="your@email.com" required autocomplete="email" />
+        <div class="cert-body">
+          <span class="cert-issuer">IBM · COURSERA</span>
+          <h3>Machine Learning with Python</h3>
+          <span class="cert-date">Dec 30, 2025</span>
+          <a href="https://coursera.org/verify/PMHTZIOVFU4E" target="_blank" rel="noopener" class="cert-verify">Verify credential ↗</a>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-subject">Subject</label>
-          <input type="text" id="contact-subject" name="subject" class="form-input"
-            placeholder="What can I help you with?" />
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="cert-img-wrap">
+          <img src="images/cert-hp-ai.png" alt="HP LIFE — AI for Beginners certificate">
+          <span class="verify-badge">VERIFIED</span>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" class="form-textarea"
-            placeholder="Describe your project, requirement, or question…" required></textarea>
+        <div class="cert-body">
+          <span class="cert-issuer">HP LIFE / HP FOUNDATION</span>
+          <h3>AI for Beginners</h3>
+          <span class="cert-date">Dec 28, 2025</span>
         </div>
-        <div id="form-status" class="form-message" role="status" aria-live="polite"></div>
-        <button type="submit" class="btn btn-primary">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12L12 2M12 2H7M12 2v5"/></svg>
-          Send Message
-        </button>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="cert-img-wrap">
+          <img src="images/cert-hp-data.png" alt="HP LIFE — Data Science & Analytics certificate">
+          <span class="verify-badge">VERIFIED</span>
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">HP LIFE / HP FOUNDATION</span>
+          <h3>Data Science &amp; Analytics</h3>
+          <span class="cert-date">Dec 24, 2025</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="cert-img-wrap">
+          <img src="images/cert-pcap.png" alt="KodeKloud — PCAP Python Certification course certificate">
+          <span class="verify-badge">VERIFIED</span>
+        </div>
+        <div class="cert-body">
+          <span class="cert-issuer">KODEKLOUD</span>
+          <h3>PCAP — Python Certification Course</h3>
+          <span class="cert-date">Sep 18, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-inner">
+    <p class="eyebrow reveal">// LET'S TALK</p>
+    <h2 class="contact-title reveal">Have data?<br>Let's make it <span>useful.</span></h2>
+    <p class="contact-desc reveal">Open to freelance work, collaborations, and full-time roles in data analytics, machine learning, and AI-driven engineering.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+        </label>
+        <button type="submit" class="btn btn-brown">Send Message</button>
+        <p class="form-note" id="formNote">This form opens your email client with the message pre-filled.</p>
       </form>
 
+      <div class="contact-links reveal">
+        <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener" class="contact-link">
+          <span>LinkedIn</span>
+          <strong>Connect with me →</strong>
+        </a>
+        <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" class="contact-link">
+          <span>GitHub</span>
+          <strong>See my work →</strong>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-</main>
-
-<!-- ─── Footer ─── -->
-<footer>
-  <div class="container">
-    <p class="footer-logo">HAROON<span>·</span>ARIF</p>
-    <p>© <span id="year"></span> haroonarif.me &nbsp;·&nbsp; Google Certified Data Analyst &amp; AI Engineer</p>
-    <p style="margin-top:6px;">
-      <a href="mailto:hafizharoonarif@gmail.com">hafizharoonarif@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </p>
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <span>© <span id="year"></span> Haroon Arif. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener">GitHub</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </div>
 </footer>
 
