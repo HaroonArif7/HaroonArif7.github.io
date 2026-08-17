@@ -371,7 +371,6 @@ img {
   overflow: hidden;
 }
 
-/* Canvas Background Visual */
 #hero-canvas {
   position: absolute;
   top: 0;
@@ -482,12 +481,12 @@ img {
 }
 
 .profile-avatar {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: var(--radius-md);
   object-fit: cover;
   border: 2px solid var(--primary-blue);
-  box-shadow: 0 0 15px var(--primary-glow);
+  box-shadow: 0 0 20px var(--primary-glow);
 }
 
 .profile-info h3 {
@@ -574,13 +573,77 @@ img {
 }
 
 /* ==========================================================================
-   About Section
+   About Section & Profile Image Card
    ========================================================================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about-profile-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 2.25rem;
+}
+
+.about-img-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1.5rem;
+}
+
+.about-portrait-img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 0 25px var(--primary-glow);
+}
+
+.about-img-badge {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(11, 15, 25, 0.95);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.profile-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .about-text {
@@ -726,10 +789,6 @@ img {
   gap: 0.4rem;
 }
 
-.skill-pill i {
-  color: var(--primary-blue);
-}
-
 .skill-category-card:hover .skill-pill {
   border-color: rgba(56, 189, 248, 0.2);
   color: var(--text-main);
@@ -831,7 +890,6 @@ img {
   margin: 0 auto 3.5rem auto;
 }
 
-/* Visual Workflow Diagram */
 .workflow-diagram {
   display: flex;
   align-items: center;
@@ -885,7 +943,6 @@ img {
   color: var(--text-dim);
 }
 
-/* Connecting lines with animated pulse */
 .workflow-connector {
   flex: 1;
   height: 2px;
@@ -931,10 +988,6 @@ img {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.auto-feature h4 i {
-  color: var(--accent-cyan);
 }
 
 .auto-feature p {

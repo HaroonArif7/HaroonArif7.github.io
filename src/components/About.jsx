@@ -87,4 +87,41 @@ export default function About() {
                 I am a <span className="highlight">Google-Certified Data Analyst</span> and <span className="highlight">AI Engineer</span> with strong experience in Python, Data Science, and Machine Learning, backed by an IBM Certification in Machine Learning.
               </p>
               <p>
-               
+                I help businesses and technical teams transform raw, unstructured data into actionable insights, predictive models, and autonomous AI systems. I do not just write code — I build resilient, production-ready software solutions that solve genuine operational bottlenecks.
+              </p>
+              <p>
+                Whether you need to automate multi-step business workflows, build intelligent AI agents, extract market data via scalable web scraping, or engineer predictive models, I deliver solutions focused on accuracy, speed, and business ROI.
+              </p>
+            </div>
+
+            <div ref={statsRef} className="stats-grid">
+              <div className="stat-card">
+                <div className="stat-card-number">3+</div>
+                <div className="stat-card-label">Years Experience</div>
+                <div className="stat-card-sub">Data & Python Development</div>
+              </div>
+
+              <div className="stat-card">
+                <div className="stat-card-number">100%</div>
+                <div className="stat-card-label">Python Centric</div>
+                <div className="stat-card-sub">Core Software Engine</div>
+              </div>
+
+              <div className="stat-card">
+                <div className="stat-card-number">AI + Data</div>
+                <div className="stat-card-label">Specialization</div>
+                <div className="stat-card-sub">Agents & ML Models</div>
+              </div>
+
+              <div className="stat-card">
+                <div className="stat-card-number">Automation</div>
+                <div className="stat-card-label">Business Focus</div>
+                <div className="stat-card-sub">n8n & LLM Workflows</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
