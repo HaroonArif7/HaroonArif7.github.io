@@ -1,191 +1,39 @@
-Portfolio/
-│
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-├── background.jpg
-│
-├── Resume/
-│   └── (<Haroon Arif (2).pdf>)
-│
-├── Images/
-│   ├── profile.jpeg
-│   ├── AI cer.png
-│   ├── google certified.png
-│   ├── machine with python.png
-│   ├── hp.png
-│   └── pcap.png
-# 🚀 Haroon Arif | Personal Portfolio Website
+# 🚀 Haroon Arif — Personal Portfolio Website
 
-A modern, responsive, and professional portfolio website built with **HTML5**, **CSS3**, and **JavaScript**. This portfolio showcases my skills, certifications, services, and contact information as a **Google Certified Data Analyst, Data Scientist, and AI Engineer**.
+A modern, high-performance portfolio website built for **Haroon Arif**, positioning him as a **Data Scientist | AI Engineer | Python Developer | AI Automation Specialist**.
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Website
 
-> https://haroonarif.me
-
----
-
-## 📸 Preview
-
-(Add a screenshot of your homepage here)
-
-```
-images/portfolio-preview.png
-```
+> [https://haroonarif.me/](https://haroonarif.me/)
 
 ---
 
-# ✨ Features
+## ✨ Features & Architecture
 
-- Responsive Design
-- Modern Dark Theme UI
-- Animated Typing Effect
-- Smooth Scrolling Navigation
-- Active Navigation Highlight
-- Mobile Friendly Navigation Menu
-- Professional About Section
-- Services Showcase
-- Certificates Gallery
-- Contact Form
-- Download Resume Button
-- Social Media Links
-- Clean and Organized Layout
+- **Dark Modern Tech Aesthetic**: Deep midnight blue palette (`#070A11`), electric blue (`#38BDF8`) & cyan accents, glassmorphic card containers (`backdrop-filter: blur(16px)`).
+- **Interactive AI Data Canvas**: Zero-dependency HTML5 Canvas rendering animated nodes, data stream lines, glowing pulses, and mouse attraction/repulsion. Automatically pauses execution when offscreen to conserve GPU/CPU resources.
+- **Sticky Glass Header**: Smooth scrolling navigation with active ScrollSpy section tracking and animated mobile navigation drawer.
+- **Strategic Brand Identity**: Google-Certified Data Analyst & IBM Machine Learning positioning focused on business value, automated systems, scalable software, and ROI.
+- **Interactive Skills System**: Categorized technology stack filterable by Programming, Data Science & AI, Backend, Databases, Automation & AI Agents, and Cloud & DevOps.
+- **Dedicated AI & Automation Showcase**: Visual workflow diagram (`Trigger` ➔ `AI Agent` ➔ `Tools` ➔ `Data` ➔ `Automation` ➔ `Business Result`) with glowing data pulse keyframes.
+- **Flagship & Project Cards**: Highlighting real-world projects with problem statement, solution, tech stack tags, and repository links.
+- **Certifications Lightbox Modal**: Interactive gallery displaying official certificates (Google, IBM, KodeKloud PCAP, HP LIFE) with full-resolution image lightbox inspection.
+- **Formspree Contact Form**: Validated client-side form with success/error alerts and direct email, LinkedIn, and GitHub links.
+- **SEO & Accessibility**: Complete Open Graph, Twitter Cards, JSON-LD Schema markup, keyboard accessibility focus states, and `prefers-reduced-motion` support.
 
 ---
 
-# 🛠 Technologies Used
+## 🛠 Technologies Used
 
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-
-### Icons
-
-- Boxicons
-
-### Fonts
-
-- Google Fonts (Poppins)
+- **HTML5**: Semantic document structure & JSON-LD schema
+- **CSS3**: CSS Custom Properties (Tokens), Flexbox, CSS Grid, Glassmorphism, Keyframe animations
+- **JavaScript (ES6+)**: HTML5 Canvas 2D, IntersectionObserver, Lightbox Modal, Event handling
+- **Icons & Fonts**: Boxicons, Google Fonts (*Plus Jakarta Sans*, *Space Grotesk*)
 
 ---
 
-# 💼 Services
+## 📄 License
 
-- 🤖 AI Agents
-- 🐍 Python Development
-- 📊 Data Science
-- 📈 Data Analytics
-- 🧠 Machine Learning
-- 🌐 Web Scraping
-- ☁ Cloud & Automation
-
----
-
-# 📜 Certifications
-
-- Google Certified Data Analyst
-- IBM Machine Learning with Python
-- AI Fundamentals
-- Data Science & Analytics
-- PCAP Python Programming
-
----
-
-# 📁 Project Structure
-
-```
-Portfolio/
-│
-├── index.html
-├── style.css
-├── script.js
-│
-├── images/
-│   ├── linkedin profile pic.jpeg
-│   ├── AI cer.png
-│   ├── google certified.png
-│   ├── machine wwith python.png
-│   ├── hp.png
-│   └── pcap.png
-│
-├── background.jpg
-├── My_Resume.pdf
-│
-└── README.md
-```
-
----
-
-# 🚀 Getting Started
-
-Clone the repository
-
-```bash
-git clone https://github.com/yourusername/portfolio.git
-```
-
-Open the project
-
-```bash
-cd portfolio
-```
-
-Run the website
-
-Simply open
-
-```
-index.html
-```
-
-in your browser.
-
----
-
-# 📱 Responsive Design
-
-The portfolio is optimized for
-
-- Desktop
-- Laptop
-- Tablet
-- Mobile Devices
-
----
-
-# 📬 Contact
-
-Haroon Arif
-
-Google Certified Data Analyst
-
-AI Engineer
-
-Data Scientist
-
-LinkedIn
-
-GitHub
-
-Twitter/X
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-# ⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub.
-
----
-
-© 2026 Haroon Arif. All Rights Reserved.
+© 2026 Haroon Arif. All rights reserved.
