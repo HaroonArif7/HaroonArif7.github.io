@@ -128,15 +128,22 @@ export default function Hero() {
                 Let's Work Together
               </a>
 
-              <a
-                href="/Haroon-Arif-CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline btn-sm"
-              >
-                <FileText size={16} />
-                View CV
-              </a>
+             <a
+  href="/Haroon%20Arif%20(2).pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn-outline btn-sm"
+>
+  <FileText size={16} /> View CV
+</a>
+
+<a
+  href="/Haroon%20Arif%20(2).pdf"
+  download="Haroon Arif (2).pdf"
+  className="btn btn-outline btn-sm"
+>
+  <Download size={16} /> Download CV
+</a>
 
               <a
                 href="/Haroon-Arif-CV.pdf"
