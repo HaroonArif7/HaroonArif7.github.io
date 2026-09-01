@@ -18,20 +18,44 @@ export default function Certifications() {
   const gridRef = useRef(null);
 
   useGSAP(() => {
-    const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
+    const items = gridRef.current?.children
+      ? Array.from(gridRef.current.children)
+      : [];
+
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power3.out'
+    // Make sure certificates are never permanently hidden.
+    gsap.set(items, {
+      opacity: 1,
+      clearProps: 'transform'
     });
+
+    const animations = gsap.fromTo(
+      items,
+      {
+        y: 40,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+        overwrite: true,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 75%',
+          once: true
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      animations.kill();
+    };
   }, { scope: containerRef });
 
   const certs = [
@@ -77,26 +101,71 @@ export default function Certifications() {
   ];
 
   return (
-    <section className="section" id="certificates" ref={containerRef}>
+    <section
+      className="section"
+      id="certificates"
+      ref={containerRef}
+    >
       <div className="container">
+
         <div className="section-header">
-          <span className="section-tag"><Award size={16} /> Credentials</span>
-          <h2 className="section-title">Verified <span>Certifications</span></h2>
-          <p className="section-subtitle">Official industry credentials validating data science, machine learning, and software engineering expertise.</p>
+          <span className="section-tag">
+            <Award size={16} /> Credentials
+          </span>
+
+          <h2 className="section-title">
+            Verified <span>Certifications</span>
+          </h2>
+
+          <p className="section-subtitle">
+            Official industry credentials validating data science,
+            machine learning, and software engineering expertise.
+          </p>
         </div>
 
-        <div className="certs-grid" ref={gridRef}>
+        <div
+          className="certs-grid"
+          ref={gridRef}
+        >
           {certs.map((cert, idx) => (
-            <div key={idx} className="glass-card cert-card" onClick={() => setSelectedCert(cert)}>
+            <div
+              key={idx}
+              className="glass-card cert-card"
+              onClick={() => setSelectedCert(cert)}
+            >
               <div className="cert-img-wrapper">
-                <img src={cert.img} alt={cert.title} loading="lazy" />
+                <img
+                  src={cert.img}
+                  alt={cert.title}
+                  loading="lazy"
+                />
+
                 <div className="cert-hover-overlay">
                   <Search size={22} />
-                  <span style={{ fontSize: '0.85rem', marginLeft: '0.4rem', fontWeight: '600' }}>Preview Certificate</span>
+
+                  <span
+                    style={{
+                      fontSize: '0.85rem',
+                      marginLeft: '0.4rem',
+                      fontWeight: '600'
+                    }}
+                  >
+                    Preview Certificate
+                  </span>
                 </div>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span className="cert-issuer">{cert.issuer}</span>
+
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}
+              >
+                <span className="cert-issuer">
+                  {cert.issuer}
+                </span>
+
                 {cert.verifyUrl && (
                   <a
                     href={cert.verifyUrl}
@@ -106,12 +175,19 @@ export default function Certifications() {
                     className="cert-verify-link"
                     title="Verify Credential"
                   >
-                    <ShieldCheck size={14} /> Verify
+                    <ShieldCheck size={14} />
+                    Verify
                   </a>
                 )}
               </div>
-              <h3 className="cert-title">{cert.title}</h3>
-              <p className="cert-desc">{cert.desc}</p>
+
+              <h3 className="cert-title">
+                {cert.title}
+              </h3>
+
+              <p className="cert-desc">
+                {cert.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -119,14 +195,42 @@ export default function Certifications() {
 
       {/* Lightbox Modal */}
       {selectedCert && (
-        <div className="modal-overlay active" onClick={() => setSelectedCert(null)}>
-          <div className="modal-content-wrapper" onClick={e => e.stopPropagation()}>
-            <button className="modal-close-btn" aria-label="Close modal" onClick={() => setSelectedCert(null)}>
+        <div
+          className="modal-overlay active"
+          onClick={() => setSelectedCert(null)}
+        >
+          <div
+            className="modal-content-wrapper"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              className="modal-close-btn"
+              aria-label="Close modal"
+              onClick={() => setSelectedCert(null)}
+            >
               <X size={20} />
             </button>
-            <img className="modal-img-preview" src={selectedCert.img} alt={selectedCert.title} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.5rem' }}>
-              <h3 style={{ fontSize: '1.4rem' }}>{selectedCert.title}</h3>
+
+            <img
+              className="modal-img-preview"
+              src={selectedCert.img}
+              alt={selectedCert.title}
+            />
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '0.5rem',
+                marginBottom: '0.5rem'
+              }}
+            >
+              <h3 style={{ fontSize: '1.4rem' }}>
+                {selectedCert.title}
+              </h3>
+
               {selectedCert.verifyUrl && (
                 <a
                   href={selectedCert.verifyUrl}
@@ -134,13 +238,33 @@ export default function Certifications() {
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-sm"
                 >
-                  <ExternalLink size={14} /> Verify Official Certificate
+                  <ExternalLink size={14} />
+                  Verify Official Certificate
                 </a>
               )}
             </div>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '0.75rem' }}>{selectedCert.desc}</p>
+
+            <p
+              style={{
+                color: 'var(--text-muted)',
+                fontSize: '0.95rem',
+                marginBottom: '0.75rem'
+              }}
+            >
+              {selectedCert.desc}
+            </p>
+
             {selectedCert.verifyId && (
-              <span style={{ fontSize: '0.775rem', color: 'var(--text-dim)', background: 'rgba(255,255,255,0.03)', padding: '0.25rem 0.6rem', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.06)' }}>
+              <span
+                style={{
+                  fontSize: '0.775rem',
+                  color: 'var(--text-dim)',
+                  background: 'rgba(255,255,255,0.03)',
+                  padding: '0.25rem 0.6rem',
+                  borderRadius: '4px',
+                  border: '1px solid rgba(255,255,255,0.06)'
+                }}
+              >
                 Credential ID: {selectedCert.verifyId}
               </span>
             )}
