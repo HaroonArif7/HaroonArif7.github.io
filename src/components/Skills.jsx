@@ -2,7 +2,15 @@ import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code, Code2, ScatterChart, Server, Database, Bot, Cloud } from 'lucide-react';
+import {
+  Code,
+  Code2,
+  ScatterChart,
+  Server,
+  Database,
+  Bot,
+  Cloud
+} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,28 +18,49 @@ export default function Skills() {
   const [activeFilter, setActiveFilter] = useState('all');
   const containerRef = useRef(null);
   const gridRef = useRef(null);
-useGSAP(() => {
-  const items = gridRef.current?.children
-    ? Array.from(gridRef.current.children)
-    : [];
 
-  if (!items.length) return;
+  useGSAP(() => {
+    const items = gridRef.current?.children
+      ? Array.from(gridRef.current.children)
+      : [];
 
-  gsap.from(items, {
-    scrollTrigger: {
-      trigger: containerRef.current,
-      start: 'top 75%',
-    },
-    y: 30,
-    opacity: 0,
-    stagger: 0.1,
-    duration: 0.6,
-    ease: 'power3.out',
+    if (!items.length) return;
+
+    // Always keep cards visible if animation/ScrollTrigger has any issue.
+    gsap.set(items, {
+      opacity: 1,
+      clearProps: 'transform'
+    });
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        items,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.6,
+          ease: 'power3.out',
+          overwrite: true,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 75%',
+            once: true
+          }
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, {
+    scope: containerRef,
+    dependencies: [activeFilter]
   });
-}, {
-  scope: containerRef,
-  dependencies: [activeFilter],
-});
+
   const categories = [
     { id: 'all', label: 'All Skills' },
     { id: 'programming', label: 'Programming' },
@@ -53,45 +82,91 @@ useGSAP(() => {
       category: 'datascience',
       icon: <ScatterChart size={20} />,
       title: 'Data Science & AI',
-      skills: ['Machine Learning', 'Data Analysis', 'Pandas', 'NumPy', 'Scikit-Learn', 'TensorFlow', 'PyTorch']
+      skills: [
+        'Machine Learning',
+        'Data Analysis',
+        'Pandas',
+        'NumPy',
+        'Scikit-Learn',
+        'TensorFlow',
+        'PyTorch'
+      ]
     },
     {
       category: 'backend',
       icon: <Server size={20} />,
       title: 'Backend & Web',
-      skills: ['Django', 'Django REST Framework', 'Flask', 'FastAPI', 'Pydantic']
+      skills: [
+        'Django',
+        'Django REST Framework',
+        'Flask',
+        'FastAPI',
+        'Pydantic'
+      ]
     },
     {
       category: 'databases',
       icon: <Database size={20} />,
       title: 'Databases',
-      skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'SQL Analytics']
+      skills: [
+        'PostgreSQL',
+        'MySQL',
+        'MongoDB',
+        'SQL Analytics'
+      ]
     },
     {
       category: 'automation',
       icon: <Bot size={20} />,
       title: 'Automation & AI Agents',
-      skills: ['n8n Workflows', 'AI Agents', 'LLM Workflows', 'Web Scraping', 'API Integration']
+      skills: [
+        'n8n Workflows',
+        'AI Agents',
+        'LLM Workflows',
+        'Web Scraping',
+        'API Integration'
+      ]
     },
     {
       category: 'cloud',
       icon: <Cloud size={20} />,
       title: 'Cloud & DevOps',
-      skills: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'CI/CD & Git']
+      skills: [
+        'AWS',
+        'Azure',
+        'Google Cloud',
+        'Docker',
+        'CI/CD & Git'
+      ]
     }
   ];
 
   const filteredCards = activeFilter === 'all'
     ? skillCards
-    : skillCards.filter(card => card.category === activeFilter);
+    : skillCards.filter(
+        card => card.category === activeFilter
+      );
 
   return (
-    <section className="section" id="skills" ref={containerRef}>
+    <section
+      className="section"
+      id="skills"
+      ref={containerRef}
+    >
       <div className="container">
+
         <div className="section-header">
-          <span className="section-tag"><Code size={16} /> Tech Stack</span>
-          <h2 className="section-title">Technical Skills & <span>Core Competencies</span></h2>
-          <p className="section-subtitle">An organized breakdown of technologies I use to build scalable systems.</p>
+          <span className="section-tag">
+            <Code size={16} /> Tech Stack
+          </span>
+
+          <h2 className="section-title">
+            Technical Skills & <span>Core Competencies</span>
+          </h2>
+
+          <p className="section-subtitle">
+            An organized breakdown of technologies I use to build scalable systems.
+          </p>
         </div>
 
         {/* Filter Buttons */}
@@ -99,7 +174,9 @@ useGSAP(() => {
           {categories.map(cat => (
             <button
               key={cat.id}
-              className={`filter-btn ${activeFilter === cat.id ? 'active' : ''}`}
+              className={`filter-btn ${
+                activeFilter === cat.id ? 'active' : ''
+              }`}
               onClick={() => setActiveFilter(cat.id)}
             >
               {cat.label}
@@ -108,16 +185,30 @@ useGSAP(() => {
         </div>
 
         {/* Skills Grid */}
-        <div className="skills-grid" ref={gridRef}>
+        <div
+          className="skills-grid"
+          ref={gridRef}
+        >
           {filteredCards.map((card, idx) => (
-            <div key={idx} className="skill-category-card" data-category={card.category}>
+            <div
+              key={idx}
+              className="skill-category-card"
+              data-category={card.category}
+            >
               <h3 className="skill-category-title">
-                <div className="skill-category-icon">{card.icon}</div>
+                <div className="skill-category-icon">
+                  {card.icon}
+                </div>
+
                 {card.title}
               </h3>
+
               <div className="skill-items-list">
                 {card.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="skill-pill">
+                  <span
+                    key={sIdx}
+                    className="skill-pill"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -125,6 +216,7 @@ useGSAP(() => {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
