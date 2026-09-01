@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { LayoutGrid, Github } from 'lucide-react';
+import { LayoutGrid, Github, Activity, Terminal, Bot, Zap, ArrowUpRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,28 +39,44 @@ export default function Projects() {
       badge: 'Data Science & ML',
       title: 'Predictive Customer Churn Analytics',
       desc: 'End-to-end data cleaning, feature engineering, and Machine Learning pipeline designed to predict customer churn risks using XGBoost and Scikit-Learn.',
-      tags: ['Python', 'Pandas', 'Scikit-Learn', 'Streamlit']
+      tags: ['Python', 'Pandas', 'Scikit-Learn', 'Streamlit'],
+      visualType: 'ml-metrics',
+      metricVal: '89.4% ROC-AUC',
+      metricLabel: 'Model Accuracy',
+      icon: <Activity size={22} color="#38bdf8" />
     },
     {
       category: 'automation',
       badge: 'Automation & Web',
       title: 'Enterprise Web Scraping Platform',
       desc: 'High-throughput distributed web scraper built with Playwright and Pydantic validation, featuring proxy rotation and automated HTML extraction.',
-      tags: ['Python', 'Playwright', 'Pydantic', 'MongoDB']
+      tags: ['Python', 'Playwright', 'Pydantic', 'MongoDB'],
+      visualType: 'scraper-nodes',
+      metricVal: '50k+ Daily',
+      metricLabel: 'Extracted Listings',
+      icon: <Terminal size={22} color="#06b6d4" />
     },
     {
       category: 'ai',
       badge: 'AI & Automation',
       title: 'n8n Lead Qualification Engine',
       desc: 'Automated workflow that parses incoming sales leads, enriches data via OpenAI API, and routes qualified leads directly to HubSpot and Slack.',
-      tags: ['n8n', 'OpenAI', 'Webhooks', 'HubSpot API']
+      tags: ['n8n', 'OpenAI', 'Webhooks', 'HubSpot API'],
+      visualType: 'workflow-nodes',
+      metricVal: '15 Hrs/Wk',
+      metricLabel: 'Saved Overhead',
+      icon: <Bot size={22} color="#818cf8" />
     },
     {
       category: 'python',
       badge: 'Python / Backend',
       title: 'FastAPI Financial Analytics REST API',
       desc: 'Asynchronous microservice providing high-speed financial metric aggregations, JWT authentication, and structured PostgreSQL queries.',
-      tags: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Docker']
+      tags: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'Docker'],
+      visualType: 'api-latency',
+      metricVal: '< 40ms',
+      metricLabel: 'Endpoint Latency',
+      icon: <Zap size={22} color="#34d399" />
     }
   ];
 
@@ -72,7 +88,7 @@ export default function Projects() {
     <section className="section" id="projects" ref={containerRef}>
       <div className="container">
         <div className="section-header">
-          <span className="section-tag"><LayoutGrid size={16} /> Portfolio</span>
+          <span className="section-tag"><LayoutGrid size={16} /> Portfolio Showcase</span>
           <h2 className="section-title">Selected <span>Engineering Projects</span></h2>
           <p className="section-subtitle">Real-world AI, Data Science, Python, and Automation solutions.</p>
         </div>
@@ -94,19 +110,29 @@ export default function Projects() {
         <div className="projects-grid" ref={gridRef}>
           {filteredProjects.map((p, idx) => (
             <div key={idx} className="glass-card project-card" data-category={p.category}>
-              <div>
+              
+              {/* Visual Graphic Banner Header */}
+              <div className="project-banner-visual">
+                <div className="banner-icon-badge">{p.icon}</div>
+                <div className="banner-metric-box">
+                  <div className="num">{p.metricVal}</div>
+                  <div className="label">{p.metricLabel}</div>
+                </div>
+                <div className="banner-grid-overlay"></div>
+              </div>
+
+              <div className="project-card-body">
                 <div className="project-card-header">
                   <span className="project-category-badge">{p.badge}</span>
                   <div className="project-links-group">
-                    <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" className="project-link-icon" title="View Source">
+                    <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener noreferrer" className="project-link-icon" title="View Repository">
                       <Github size={16} />
                     </a>
                   </div>
                 </div>
                 <h3 className="project-card-title">{p.title}</h3>
                 <p className="project-card-desc">{p.desc}</p>
-              </div>
-              <div>
+
                 <div className="project-tech-tags">
                   {p.tags.map((tag, tIdx) => (
                     <span key={tIdx} className="tech-tag">{tag}</span>

@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Folder, Send, FileText, Download, Brain, ShieldCheck } from 'lucide-react';
+import { Folder, Send, FileText, Download, Brain, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import Hero3DCanvas from './Hero3DCanvas.jsx';
+import profilePic from '../assets/haroon-profile.jpg';
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -52,29 +53,40 @@ export default function Hero() {
               <a href="#contact" className="btn btn-secondary">
                 <Send size={18} /> Let's Work Together
               </a>
-              <a href="Haroon Arif (2).pdf" target="_blank" rel="noopener" className="btn btn-outline btn-sm">
+              <a href="/Haroon Arif (2).pdf" target="_blank" rel="noopener" className="btn btn-outline btn-sm">
                 <FileText size={16} /> View CV
               </a>
-              <a href="Haroon Arif (2).pdf" download className="btn btn-outline btn-sm">
+              <a href="/Haroon Arif (2).pdf" download className="btn btn-outline btn-sm">
                 <Download size={16} /> Download CV
               </a>
             </div>
           </div>
 
-          {/* Profile & Floating Cards */}
+          {/* Profile & Visual Showcase Card */}
           <div className="hero-visual-wrapper">
             <div className="hero-card-stack" ref={cardRef}>
               <div className="hero-profile-card">
                 <div className="profile-header">
-                  <img src="linkedin profile pic.jpeg" alt="Haroon Arif" className="profile-avatar" />
+                  <div className="profile-avatar-wrapper">
+                    <img
+                      src={profilePic}
+                      alt="Haroon Arif — AI Engineer & Data Scientist"
+                      className="profile-avatar"
+                      loading="eager"
+                    />
+                    <span className="online-indicator" title="Available for projects"></span>
+                  </div>
                   <div className="profile-info">
                     <h3>Haroon Arif</h3>
-                    <p>AI Engineer & Data Scientist</p>
+                    <p className="profile-role">Data Scientist & AI Engineer</p>
+                    <span className="profile-badge">
+                      <CheckCircle2 size={13} color="#38bdf8" /> Google & IBM Certified
+                    </span>
                   </div>
                 </div>
 
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.75rem' }}>
-                  Architecting automated pipelines, multi-agent AI systems, and predictive models designed for business growth.
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '0.9rem', lineHeight: '1.5' }}>
+                  Engineering multi-agent AI systems, predictive ML pipelines, and automated business workflows designed for growth.
                 </p>
 
                 <div className="tech-ticker">

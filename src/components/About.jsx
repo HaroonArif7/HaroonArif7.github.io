@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { User, CheckCircle2, MapPin, Award } from 'lucide-react';
+import { User, CheckCircle2, MapPin, Award, Terminal, Cpu } from 'lucide-react';
+import profilePic from '../assets/haroon-profile.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,19 +49,24 @@ export default function About() {
         </div>
 
         <div className="about-grid">
-          {/* Profile Picture Card */}
+          {/* Prominent Profile Card */}
           <div ref={imageCardRef} className="glass-card about-profile-card">
             <div className="about-img-container">
-              <img src="linkedin profile pic.jpeg" alt="Haroon Arif Profile" className="about-portrait-img" />
+              <img
+                src={profilePic}
+                alt="Haroon Arif — Professional Data Scientist & AI Engineer"
+                className="about-portrait-img"
+                loading="lazy"
+              />
               <div className="about-img-badge">
-                <CheckCircle2 size={16} color="#38bdf8" /> Google & IBM Certified
+                <CheckCircle2 size={15} color="#38bdf8" /> Google & IBM Certified
               </div>
             </div>
 
             <div className="about-profile-details">
-              <h3 style={{ fontSize: '1.4rem', marginBottom: '0.2rem' }}>Haroon Arif</h3>
-              <p style={{ color: 'var(--primary-blue)', fontWeight: '600', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                Data Scientist | AI Engineer | Python Specialist
+              <h3 style={{ fontSize: '1.45rem', marginBottom: '0.2rem' }}>Haroon Arif</h3>
+              <p style={{ color: 'var(--primary-blue)', fontWeight: '600', fontSize: '0.925rem', marginBottom: '1.2rem' }}>
+                Data Scientist & AI Engineer
               </p>
 
               <div className="profile-meta-list">
@@ -73,14 +79,18 @@ export default function About() {
                   <span>IBM Machine Learning Certified</span>
                 </div>
                 <div className="meta-item">
+                  <Terminal size={16} color="var(--primary-blue)" />
+                  <span>Python & AI Agent Architecture</span>
+                </div>
+                <div className="meta-item">
                   <MapPin size={16} color="var(--primary-blue)" />
-                  <span>Open for Remote & Global Consulting</span>
+                  <span>Open for Global Consulting & Remote Roles</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Text & Stats Wrapper */}
+          {/* Bio Text & Visual Stat Cards */}
           <div className="about-content-wrapper">
             <div ref={textCardRef} className="about-text glass-card" style={{ marginBottom: '1.75rem' }}>
               <p>
