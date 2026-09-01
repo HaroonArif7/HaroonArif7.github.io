@@ -11,7 +11,10 @@ export default function AutomationShowcase() {
   const diagramRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(diagramRef.current.children, {
+    const items = diagramRef.current?.children ? Array.from(diagramRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 75%',

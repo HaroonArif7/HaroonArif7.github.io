@@ -13,7 +13,10 @@ export default function Contact() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(containerRef.current.children, {
+    const items = containerRef.current?.children ? Array.from(containerRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 80%',
@@ -76,7 +79,7 @@ export default function Contact() {
                 <div>
                   <div className="contact-label">LinkedIn</div>
                   <div className="contact-val">
-                    <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener" style={{ color: 'var(--primary-blue)' }}>
+                    <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-blue)' }}>
                       haroon-arif-09832924a
                     </a>
                   </div>
@@ -88,7 +91,7 @@ export default function Contact() {
                 <div>
                   <div className="contact-label">GitHub</div>
                   <div className="contact-val">
-                    <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" style={{ color: 'var(--primary-blue)' }}>
+                    <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-blue)' }}>
                       github.com/HaroonArif7
                     </a>
                   </div>

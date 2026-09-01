@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { User, CheckCircle2, MapPin, Award, Terminal, Cpu } from 'lucide-react';
+import { User, CheckCircle2, MapPin, Award, Terminal } from 'lucide-react';
 import profilePic from '../assets/haroon-profile.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,29 +14,35 @@ export default function About() {
   const statsRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from([imageCardRef.current, textCardRef.current], {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power3.out'
-    });
+    const mainTargets = [imageCardRef.current, textCardRef.current].filter(Boolean);
+    if (mainTargets.length) {
+      gsap.from(mainTargets, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%',
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+      });
+    }
 
-    gsap.from(statsRef.current.children, {
-      scrollTrigger: {
-        trigger: statsRef.current,
-        start: 'top 85%',
-      },
-      y: 30,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.15,
-      ease: 'power3.out'
-    });
+    const statItems = statsRef.current?.children ? Array.from(statsRef.current.children) : [];
+    if (statItems.length) {
+      gsap.from(statItems, {
+        scrollTrigger: {
+          trigger: statsRef.current,
+          start: 'top 85%',
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power3.out'
+      });
+    }
   }, { scope: containerRef });
 
   return (

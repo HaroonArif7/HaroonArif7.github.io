@@ -10,7 +10,10 @@ export default function FeaturedProject() {
   const containerRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(containerRef.current.children, {
+    const items = containerRef.current?.children ? Array.from(containerRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 80%',
@@ -60,7 +63,7 @@ export default function FeaturedProject() {
             </div>
 
             <div className="hero-cta-group">
-              <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" className="btn btn-primary btn-sm">
+              <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
                 <Github size={16} /> View GitHub Repo
               </a>
               <a href="#contact" className="btn btn-secondary btn-sm">

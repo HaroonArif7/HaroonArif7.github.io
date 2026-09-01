@@ -11,7 +11,10 @@ export default function Blog() {
   const gridRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(gridRef.current.children, {
+    const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 75%',

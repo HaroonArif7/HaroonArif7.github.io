@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { LayoutGrid, Github, Activity, Terminal, Bot, Zap, ArrowUpRight } from 'lucide-react';
+import { LayoutGrid, Github, Activity, Terminal, Bot, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +12,10 @@ export default function Projects() {
   const gridRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(gridRef.current.children, {
+    const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 75%',
@@ -23,7 +26,7 @@ export default function Projects() {
       stagger: 0.12,
       ease: 'power3.out'
     });
-  }, { scope: containerRef });
+  }, { scope: containerRef, dependencies: [activeFilter] });
 
   const categories = [
     { id: 'all', label: 'All Projects' },

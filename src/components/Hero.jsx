@@ -15,13 +15,20 @@ export default function Hero() {
 
   // GSAP Entrance Timeline for Hero Section
   useGSAP(() => {
+    if (!badgeRef.current || !titleRef.current || !descRef.current || !ctaRef.current || !cardRef.current) return;
+    const ctaItems = ctaRef.current?.children ? Array.from(ctaRef.current.children) : [];
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     tl.from(badgeRef.current, { y: 20, opacity: 0, duration: 0.6 })
       .from(titleRef.current, { y: 30, opacity: 0, duration: 0.8 }, '-=0.3')
-      .from(descRef.current, { y: 25, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from(ctaRef.current.children, { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.4')
-      .from(cardRef.current, { scale: 0.95, opacity: 0, duration: 0.8 }, '-=0.6');
+      .from(descRef.current, { y: 25, opacity: 0, duration: 0.8 }, '-=0.5');
+
+    if (ctaItems.length) {
+      tl.from(ctaItems, { y: 20, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.4');
+    }
+
+    tl.from(cardRef.current, { scale: 0.95, opacity: 0, duration: 0.8 }, '-=0.6');
   }, { scope: containerRef });
 
   return (

@@ -1,10 +1,10 @@
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import ErrorBoundary from './ErrorBoundary.jsx';
 
 function NodeNetwork() {
   const groupRef = useRef();
-  const linesRef = useRef();
 
   // Generate node positions and connecting line geometry
   const { positions, lineGeometry } = useMemo(() => {
@@ -71,15 +71,20 @@ function NodeNetwork() {
 export default function Hero3DCanvas() {
   return (
     <div style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none' }}>
-      <Canvas
-        camera={{ position: [0, 0, 8], fov: 60 }}
-        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-        style={{ width: '100%', height: '100%' }}
-      >
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#06b6d4" />
-        <NodeNetwork />
-      </Canvas>
+      <ErrorBoundary fallback={<div className="hero-fallback-bg" />}>
+        <Canvas
+          camera={{ position: [0, 0, 8], fov: 60 }}
+          gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+          style={{ width: '100%', height: '100%' }}
+          onCreated={({ gl }) => {
+            gl.setClearColor(0x000000, 0);
+          }}
+        >
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} color="#06b6d4" />
+          <NodeNetwork />
+        </Canvas>
+      </ErrorBoundary>
     </div>
   );
 }

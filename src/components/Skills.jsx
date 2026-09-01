@@ -12,7 +12,10 @@ export default function Skills() {
   const gridRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(gridRef.current.children, {
+    const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
+    if (!items.length) return;
+
+    gsap.from(items, {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 75%',
@@ -23,7 +26,7 @@ export default function Skills() {
       stagger: 0.1,
       ease: 'power3.out'
     });
-  }, { scope: containerRef });
+  }, { scope: containerRef, dependencies: [activeFilter] });
 
   const categories = [
     { id: 'all', label: 'All Skills' },

@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary.jsx';
 import LenisScroll from './components/LenisScroll.jsx';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
@@ -15,23 +16,25 @@ import Footer from './components/Footer.jsx';
 
 export default function App() {
   return (
-    <LenisScroll>
-      <div className="portfolio-app">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Journey />
-          <AutomationShowcase />
-          <FeaturedProject />
-          <Projects />
-          <Certifications />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </LenisScroll>
+    <ErrorBoundary>
+      <LenisScroll>
+        <div className="portfolio-app">
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Journey />
+            <AutomationShowcase />
+            <FeaturedProject />
+            <Projects />
+            <Certifications />
+            <Blog />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </LenisScroll>
+    </ErrorBoundary>
   );
 }

@@ -11,9 +11,10 @@ export default function Journey() {
   const itemsRef = useRef(null);
 
   useGSAP(() => {
-    const items = itemsRef.current.children;
+    const items = itemsRef.current?.children ? Array.from(itemsRef.current.children) : [];
+    if (!items.length) return;
 
-    Array.from(items).forEach((item) => {
+    items.forEach((item) => {
       gsap.from(item, {
         scrollTrigger: {
           trigger: item,
