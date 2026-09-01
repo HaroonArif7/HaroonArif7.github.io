@@ -2,7 +2,14 @@ import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { LayoutGrid, Github, Activity, Terminal, Bot, Zap } from 'lucide-react';
+import {
+  LayoutGrid,
+  Github,
+  Activity,
+  Terminal,
+  Bot,
+  Zap
+} from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,21 +19,44 @@ export default function Projects() {
   const gridRef = useRef(null);
 
   useGSAP(() => {
-    const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
+    const items = gridRef.current?.children
+      ? Array.from(gridRef.current.children)
+      : [];
+
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.12,
-      ease: 'power3.out'
+    // Make sure project cards are always visible.
+    gsap.set(items, {
+      opacity: 1,
+      clearProps: 'transform'
     });
-  }, { scope: containerRef, dependencies: [activeFilter] });
+
+    gsap.fromTo(
+      items,
+      {
+        y: 40,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: 'power3.out',
+        overwrite: true,
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 75%',
+          once: true
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
+  }, {
+    scope: containerRef,
+    dependencies: [activeFilter]
+  });
 
   const categories = [
     { id: 'all', label: 'All Projects' },
@@ -85,15 +115,30 @@ export default function Projects() {
 
   const filteredProjects = activeFilter === 'all'
     ? projectList
-    : projectList.filter(p => p.category === activeFilter);
+    : projectList.filter(
+        p => p.category === activeFilter
+      );
 
   return (
-    <section className="section" id="projects" ref={containerRef}>
+    <section
+      className="section"
+      id="projects"
+      ref={containerRef}
+    >
       <div className="container">
+
         <div className="section-header">
-          <span className="section-tag"><LayoutGrid size={16} /> Portfolio Showcase</span>
-          <h2 className="section-title">Selected <span>Engineering Projects</span></h2>
-          <p className="section-subtitle">Real-world AI, Data Science, Python, and Automation solutions.</p>
+          <span className="section-tag">
+            <LayoutGrid size={16} /> Portfolio Showcase
+          </span>
+
+          <h2 className="section-title">
+            Selected <span>Engineering Projects</span>
+          </h2>
+
+          <p className="section-subtitle">
+            Real-world AI, Data Science, Python, and Automation solutions.
+          </p>
         </div>
 
         {/* Project Category Filters */}
@@ -101,7 +146,9 @@ export default function Projects() {
           {categories.map(cat => (
             <button
               key={cat.id}
-              className={`filter-btn ${activeFilter === cat.id ? 'active' : ''}`}
+              className={`filter-btn ${
+                activeFilter === cat.id ? 'active' : ''
+              }`}
               onClick={() => setActiveFilter(cat.id)}
             >
               {cat.label}
@@ -110,41 +157,85 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="projects-grid" ref={gridRef}>
+        <div
+          className="projects-grid"
+          ref={gridRef}
+        >
           {filteredProjects.map((p, idx) => (
-            <div key={idx} className="glass-card project-card" data-category={p.category}>
-              
+            <div
+              key={idx}
+              className="glass-card project-card"
+              data-category={p.category}
+            >
+
               {/* Visual Graphic Banner Header */}
               <div className="project-banner-visual">
-                <div className="banner-icon-badge">{p.icon}</div>
-                <div className="banner-metric-box">
-                  <div className="num">{p.metricVal}</div>
-                  <div className="label">{p.metricLabel}</div>
+
+                <div className="banner-icon-badge">
+                  {p.icon}
                 </div>
+
+                <div className="banner-metric-box">
+                  <div className="num">
+                    {p.metricVal}
+                  </div>
+
+                  <div className="label">
+                    {p.metricLabel}
+                  </div>
+                </div>
+
                 <div className="banner-grid-overlay"></div>
+
               </div>
 
               <div className="project-card-body">
+
                 <div className="project-card-header">
-                  <span className="project-category-badge">{p.badge}</span>
+
+                  <span className="project-category-badge">
+                    {p.badge}
+                  </span>
+
                   <div className="project-links-group">
-                    <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener noreferrer" className="project-link-icon" title="View Repository">
+
+                    <a
+                      href="https://github.com/HaroonArif7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link-icon"
+                      title="View Repository"
+                    >
                       <Github size={16} />
                     </a>
+
                   </div>
                 </div>
-                <h3 className="project-card-title">{p.title}</h3>
-                <p className="project-card-desc">{p.desc}</p>
+
+                <h3 className="project-card-title">
+                  {p.title}
+                </h3>
+
+                <p className="project-card-desc">
+                  {p.desc}
+                </p>
 
                 <div className="project-tech-tags">
                   {p.tags.map((tag, tIdx) => (
-                    <span key={tIdx} className="tech-tag">{tag}</span>
+                    <span
+                      key={tIdx}
+                      className="tech-tag"
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
+
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
