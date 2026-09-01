@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, Search, ExternalLink, X, ShieldCheck } from 'lucide-react';
 
 import googleCertImg from '../assets/google-certified-full.png';
-import ibmCertImg from '../assets/machine wwith python.png';
+import ibmCertImg from '../assets/machine-with-python.png';
 import pcapCertImg from '../assets/pcap.png';
 import hpAiCertImg from '../assets/hp-ai-beginners.png';
 import hpDataCertImg from '../assets/hp.png';

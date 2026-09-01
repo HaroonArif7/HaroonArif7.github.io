@@ -53,10 +53,10 @@ export default function Hero() {
               <a href="#contact" className="btn btn-secondary">
                 <Send size={18} /> Let's Work Together
               </a>
-              <a href="/Haroon Arif (2).pdf" target="_blank" rel="noopener" className="btn btn-outline btn-sm">
+              <a href="./Haroon Arif (2).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
                 <FileText size={16} /> View CV
               </a>
-              <a href="/Haroon Arif (2).pdf" download className="btn btn-outline btn-sm">
+              <a href="./Haroon Arif (2).pdf" download className="btn btn-outline btn-sm">
                 <Download size={16} /> Download CV
               </a>
             </div>
