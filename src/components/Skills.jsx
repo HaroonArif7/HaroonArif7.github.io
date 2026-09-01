@@ -10,21 +10,28 @@ export default function Skills() {
   const [activeFilter, setActiveFilter] = useState('all');
   const containerRef = useRef(null);
   const gridRef = useRef(null);
+useGSAP(() => {
+  const items = gridRef.current?.children
+    ? Array.from(gridRef.current.children)
+    : [];
 
-  useGSAP(() => {
-    gsap.from(gridRef.current.children, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power3.out'
-    });
-  }, { scope: containerRef });
+  if (!items.length) return;
 
+  gsap.from(items, {
+    scrollTrigger: {
+      trigger: containerRef.current,
+      start: 'top 75%',
+    },
+    y: 30,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.6,
+    ease: 'power3.out',
+  });
+}, {
+  scope: containerRef,
+  dependencies: [activeFilter],
+});
   const categories = [
     { id: 'all', label: 'All Skills' },
     { id: 'programming', label: 'Programming' },
