@@ -25,7 +25,7 @@ export default function Projects() {
 
     if (!items.length) return;
 
-    // Make sure project cards are always visible.
+    // Ensure project cards are visible initially
     gsap.set(items, {
       opacity: 1,
       clearProps: 'transform'
@@ -34,19 +34,19 @@ export default function Projects() {
     gsap.fromTo(
       items,
       {
-        y: 40,
+        y: 30,
         opacity: 0
       },
       {
         y: 0,
         opacity: 1,
-        duration: 0.6,
-        stagger: 0.12,
+        duration: 0.5,
+        stagger: 0.08,
         ease: 'power3.out',
         overwrite: true,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 75%',
+          start: 'top 80%',
           once: true
         }
       }
@@ -161,9 +161,9 @@ export default function Projects() {
           className="projects-grid"
           ref={gridRef}
         >
-          {filteredProjects.map((p, idx) => (
+          {filteredProjects.map((p) => (
             <div
-              key={idx}
+              key={p.title}
               className="glass-card project-card"
               data-category={p.category}
             >
