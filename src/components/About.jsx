@@ -15,34 +15,51 @@ export default function About() {
 
   useGSAP(() => {
     const mainTargets = [imageCardRef.current, textCardRef.current].filter(Boolean);
+    const statItems = statsRef.current?.children ? Array.from(statsRef.current.children) : [];
+
+    // Safety First: Ensure elements are visible immediately in DOM
+    gsap.set([...mainTargets, ...statItems], { opacity: 1, clearProps: 'transform' });
+
     if (mainTargets.length) {
-      gsap.from(mainTargets, {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(
+        mainTargets,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
     }
 
-    const statItems = statsRef.current?.children ? Array.from(statsRef.current.children) : [];
     if (statItems.length) {
-      gsap.from(statItems, {
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: 'top 85%',
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(
+        statItems,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
     }
+
+    // Refresh triggers after render to avoid blank sections on initial load
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   return (
@@ -62,7 +79,7 @@ export default function About() {
                 src={profilePic}
                 alt="Haroon Arif — Professional Data Scientist & AI Engineer"
                 className="about-portrait-img"
-                loading="lazy"
+                loading="eager"
               />
               <div className="about-img-badge">
                 <CheckCircle2 size={15} color="#38bdf8" /> Google & IBM Certified
