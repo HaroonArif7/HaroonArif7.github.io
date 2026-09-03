@@ -158,6 +158,7 @@ export default function Hero() {
                       alt="Haroon Arif — AI Engineer & Data Scientist"
                       className="profile-avatar"
                       loading="eager"
+                      style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
                     />
 
                     <span
