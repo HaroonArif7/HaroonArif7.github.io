@@ -4,7 +4,6 @@ import { useGSAP } from '@gsap/react';
 import {
   Folder,
   Send,
-  FileText,
   Download,
   Brain,
   ShieldCheck,
@@ -128,18 +127,6 @@ export default function Hero() {
                 Let's Work Together
               </a>
 
-             <a
-  href="/Haroon%20Arif%20(2).pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn btn-outline btn-sm"
->
-  <FileText size={16} /> View CV
-</a>
-
-
-
-          
               <a
                 href="/Haroon-Arif-CV.pdf"
                 download="Haroon-Arif-CV.pdf"
@@ -150,7 +137,8 @@ export default function Hero() {
               </a>
 
             </div>
-          
+
+          </div>
 
           {/* Profile & Visual Showcase Card */}
           <div className="hero-visual-wrapper">
@@ -244,6 +232,7 @@ export default function Hero() {
               </div>
 
             </div>
+
           </div>
 
         </div>
