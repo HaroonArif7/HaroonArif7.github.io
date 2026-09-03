@@ -146,6 +146,7 @@ export default function Hero() {
             <div
               className="hero-card-stack"
               ref={cardRef}
+              style={{ position: 'relative', paddingBottom: '1.5rem' }}
             >
 
               <div className="hero-profile-card">
@@ -197,7 +198,7 @@ export default function Hero() {
                   and automated business workflows designed for growth.
                 </p>
 
-                <div className="tech-ticker">
+                <div className="tech-ticker" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', paddingBottom: '1rem' }}>
                   <span className="tech-tag">Python</span>
                   <span className="tech-tag">Machine Learning</span>
                   <span className="tech-tag">AI Agents</span>
@@ -221,7 +222,15 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="floating-stat-badge badge-bottom-left">
+              <div 
+                className="floating-stat-badge badge-bottom-left"
+                style={{
+                  position: 'absolute',
+                  bottom: '-15px',
+                  left: '-20px',
+                  zIndex: 5
+                }}
+              >
                 <div className="stat-icon">
                   <ShieldCheck size={20} />
                 </div>
