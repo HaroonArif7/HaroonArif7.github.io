@@ -10,7 +10,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import Hero3DCanvas from './Hero3DCanvas.jsx';
-import profilePic from '../assets/haroon-profile.jpg';
+import profilePic from '../assets/haroon-profile.jpg.png';
 
 export default function Hero() {
   const containerRef = useRef(null);
