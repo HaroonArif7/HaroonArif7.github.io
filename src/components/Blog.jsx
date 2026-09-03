@@ -14,17 +14,27 @@ export default function Blog() {
     const items = gridRef.current?.children ? Array.from(gridRef.current.children) : [];
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.12,
-      ease: 'power3.out'
-    });
+    // Safety First: Ensure blog items are visible immediately in DOM
+    gsap.set(items, { opacity: 1, clearProps: 'transform' });
+
+    gsap.fromTo(
+      items,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   const posts = [
