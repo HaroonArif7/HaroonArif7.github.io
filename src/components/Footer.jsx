@@ -15,19 +15,19 @@ export default function Footer() {
         </p>
 
         <div className="footer-socials">
-          <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener" className="social-btn" aria-label="GitHub">
+          <a href="https://github.com/HaroonArif7" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="GitHub">
             <Github size={18} />
           </a>
-          <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener" className="social-btn" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/haroon-arif-09832924a/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="LinkedIn">
             <Linkedin size={18} />
           </a>
-          <a href="https://x.com/HafizHaroonArif" target="_blank" rel="noopener" className="social-btn" aria-label="Twitter">
+          <a href="https://x.com/HafizHaroonArif" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Twitter">
             <Twitter size={18} />
           </a>
         </div>
 
         <p className="copyright">
-          © 2026 Haroon Arif. All rights reserved.
+          © {new Date().getFullYear()} Haroon Arif. All rights reserved.
         </p>
       </div>
     </footer>
