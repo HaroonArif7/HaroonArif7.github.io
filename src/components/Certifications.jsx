@@ -24,7 +24,7 @@ export default function Certifications() {
 
     if (!items.length) return;
 
-    // Make sure certificates are never permanently hidden.
+    // Safety First: Ensure cards are visible immediately in DOM
     gsap.set(items, {
       opacity: 1,
       clearProps: 'transform'
@@ -33,7 +33,7 @@ export default function Certifications() {
     const animations = gsap.fromTo(
       items,
       {
-        y: 40,
+        y: 30,
         opacity: 0
       },
       {
@@ -42,11 +42,11 @@ export default function Certifications() {
         duration: 0.6,
         stagger: 0.1,
         ease: 'power3.out',
-        overwrite: true,
+        overwrite: 'auto',
         scrollTrigger: {
           trigger: containerRef.current,
-          start: 'top 75%',
-          once: true
+          start: 'top 85%',
+          toggleActions: 'play none none none'
         }
       }
     );
@@ -137,7 +137,7 @@ export default function Certifications() {
                 <img
                   src={cert.img}
                   alt={cert.title}
-                  loading="lazy"
+                  loading="eager"
                 />
 
                 <div className="cert-hover-overlay">
