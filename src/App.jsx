@@ -20,7 +20,7 @@ export default function App() {
       <LenisScroll>
         <div className="portfolio-app">
           <Navbar />
-          <main>
+          <main id="main-content">
             <Hero />
             <About />
             <Skills />
