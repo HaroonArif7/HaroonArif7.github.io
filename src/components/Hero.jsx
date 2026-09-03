@@ -137,13 +137,7 @@ export default function Hero() {
   <FileText size={16} /> View CV
 </a>
 
-<a
-  href="/Haroon%20Arif%20(2).pdf"
-  download="Haroon Arif (2).pdf"
-  className="btn btn-outline btn-sm"
->
-  <Download size={16} /> Download CV
-</a>
+
 
               <a
                 href="/Haroon-Arif-CV.pdf"
