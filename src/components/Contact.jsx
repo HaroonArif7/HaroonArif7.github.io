@@ -16,23 +16,33 @@ export default function Contact() {
     const items = containerRef.current?.children ? Array.from(containerRef.current.children) : [];
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
+    // Safety First: Ensure contact elements are visible immediately in DOM
+    gsap.set(items, { opacity: 1, clearProps: 'transform' });
+
+    gsap.fromTo(
+      items,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       showAlert('Please fill in all required fields.', 'error');
@@ -40,11 +50,28 @@ export default function Contact() {
     }
 
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('https://formspree.io/f/xbjnqvgw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        showAlert('Thank you! Your message has been sent successfully.', 'success');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        showAlert('Oops! There was a problem submitting your form.', 'error');
+      }
+    } catch (err) {
+      showAlert('Network error! Please try again later.', 'error');
+    } finally {
       setLoading(false);
-      showAlert('Thank you! Your message has been sent successfully.', 'success');
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    }, 1200);
+    }
   };
 
   const showAlert = (msg, type) => {
@@ -102,7 +129,7 @@ export default function Contact() {
 
           {/* Form */}
           <div className="glass-card">
-            <form className="contact-form" onSubmit={handleSubmit} action="https://formspree.io/f/xbjnqvgw" method="POST">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group-row">
                 <input
                   type="text"
