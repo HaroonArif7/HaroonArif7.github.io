@@ -42,8 +42,8 @@ export default function Skills() {
         {
           y: 0,
           opacity: 1,
-          stagger: 0.1,
-          duration: 0.6,
+          stagger: 0.08,
+          duration: 0.5,
           ease: 'power3.out',
           overwrite: true,
           scrollTrigger: {
@@ -54,6 +54,8 @@ export default function Skills() {
         }
       );
     }, containerRef);
+
+    ScrollTrigger.refresh();
 
     return () => ctx.revert();
   }, {
@@ -189,9 +191,9 @@ export default function Skills() {
           className="skills-grid"
           ref={gridRef}
         >
-          {filteredCards.map((card, idx) => (
+          {filteredCards.map((card) => (
             <div
-              key={idx}
+              key={card.category}
               className="skill-category-card"
               data-category={card.category}
             >
