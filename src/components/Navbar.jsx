@@ -9,26 +9,51 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const headerRef = useRef(null);
 
-  // GSAP Entrance animation for Navbar
+  // Safe GSAP Entrance animation for Navbar
   useGSAP(() => {
-    gsap.from(headerRef.current, {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out'
-    });
+    if (!headerRef.current) return;
+
+    gsap.set(headerRef.current, { opacity: 1, clearProps: 'transform' });
+
+    gsap.fromTo(
+      headerRef.current,
+      { y: -50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out'
+      }
+    );
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Scrolled Navbar background toggle
       if (window.scrollY > 40) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+      // Active Navigation Scroll-Spy logic
+      const sections = navItems.map((item) => item.href.slice(1));
+      const scrollPos = window.scrollY + 200;
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -46,7 +71,7 @@ export default function Navbar() {
 
   return (
     <header ref={headerRef} className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div class="container header-container">
+      <div className="container header-container">
         <a href="#home" className="logo" aria-label="Haroon Arif Home">
           <div className="logo-icon">HA</div>
           <span>Haroon Arif</span>
