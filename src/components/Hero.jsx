@@ -139,6 +139,7 @@ export default function Hero() {
 
 
 
+          
               <a
                 href="/Haroon-Arif-CV.pdf"
                 download="Haroon-Arif-CV.pdf"
@@ -149,7 +150,7 @@ export default function Hero() {
               </a>
 
             </div>
-          </div>
+          
 
           {/* Profile & Visual Showcase Card */}
           <div className="hero-visual-wrapper">
