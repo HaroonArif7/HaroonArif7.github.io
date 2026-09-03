@@ -13,16 +13,26 @@ export default function FeaturedProject() {
     const items = containerRef.current?.children ? Array.from(containerRef.current.children) : [];
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
+    // Safety: Ensure elements are visible immediately in DOM
+    gsap.set(items, { opacity: 1, clearProps: 'transform' });
+
+    gsap.fromTo(
+      items,
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   return (
