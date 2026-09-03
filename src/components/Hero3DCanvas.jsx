@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import ErrorBoundary from './ErrorBoundary.jsx';
@@ -41,6 +41,13 @@ function NodeNetwork() {
 
     return { positions: pos, lineGeometry: lineGeo };
   }, []);
+
+  // Cleanup geometry on unmount to prevent GPU memory leak
+  useEffect(() => {
+    return () => {
+      lineGeometry.dispose();
+    };
+  }, [lineGeometry]);
 
   // Subtle rotation animation in R3F render loop
   useFrame((state, delta) => {
