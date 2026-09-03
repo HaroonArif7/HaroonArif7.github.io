@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { User, CheckCircle2, MapPin, Award, Terminal } from 'lucide-react';
-import profilePic from '../assets/haroon-profile.jpg';
+import profilePic from '../assets/haroon-profile.jpg.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
