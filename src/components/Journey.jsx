@@ -14,18 +14,28 @@ export default function Journey() {
     const items = itemsRef.current?.children ? Array.from(itemsRef.current.children) : [];
     if (!items.length) return;
 
+    // Safety: Make sure DOM elements stay visible initially
+    gsap.set(items, { opacity: 1, clearProps: 'transform' });
+
     items.forEach((item) => {
-      gsap.from(item, {
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 80%',
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      });
+      gsap.fromTo(
+        item,
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
     });
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   const timelinePhases = [
