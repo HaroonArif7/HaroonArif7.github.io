@@ -14,17 +14,27 @@ export default function AutomationShowcase() {
     const items = diagramRef.current?.children ? Array.from(diagramRef.current.children) : [];
     if (!items.length) return;
 
-    gsap.from(items, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-      },
-      scale: 0.9,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.15,
-      ease: 'back.out(1.2)'
-    });
+    // Safety First: Ensure nodes are visible immediately in DOM
+    gsap.set(items, { opacity: 1, scale: 1, clearProps: 'transform' });
+
+    gsap.fromTo(
+      items,
+      { scale: 0.9, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: 'back.out(1.2)',
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      }
+    );
+
+    ScrollTrigger.refresh();
   }, { scope: containerRef });
 
   const workflowSteps = [
