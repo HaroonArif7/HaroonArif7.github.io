@@ -80,6 +80,10 @@ export default function About() {
                 alt="Haroon Arif — Professional Data Scientist & AI Engineer"
                 className="about-portrait-img"
                 loading="eager"
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'top center'
+                }}
               />
               <div className="about-img-badge">
                 <CheckCircle2 size={15} color="#38bdf8" /> Google & IBM Certified
